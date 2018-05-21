@@ -490,7 +490,6 @@ int ft_strnstr_test()
 int ft_strrchr_test()
 {
    printf("Test ft_strrchr\n");
-   int len;
    const char str[] = "This is a cool string";
    const char ch = 'a';
    char *ret;

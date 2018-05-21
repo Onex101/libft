@@ -51,13 +51,18 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	num_words = ft_strcount(s, c);
 	str_arr = (char **)malloc(sizeof(*str) * num_words);
+	if (!str_arr)
+		return(NULL);
 	while (i < num_words)
 	{
 		str_arr[i] = (char *)malloc(ft_strslen(s , c));
+		if (!str_arr[i])
+			return(NULL);
 		while (*s == c)
 			s++;
 		while (*s && *s != c)
 			s++;
 		i++;
 	}
+	return (str_arr);
 }
