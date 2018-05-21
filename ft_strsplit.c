@@ -31,7 +31,7 @@ static int ft_strcount(char const *s, char c)
 	return (count);
 }
 
-static char ft_strpull(char const *s, char c)
+static int ft_strslen(char const *s, char c)
 {
 	int i;
 
@@ -44,7 +44,6 @@ static char ft_strpull(char const *s, char c)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char 	*str;
 	char 	**str_arr;
 	int 	num_words;
 	int		i;
@@ -54,6 +53,11 @@ char	**ft_strsplit(char const *s, char c)
 	str_arr = (char **)malloc(sizeof(*str) * num_words);
 	while (i < num_words)
 	{
-		str = ft_strpull(s , c);
+		str_arr[i] = (char *)malloc(ft_strslen(s , c));
+		while (*s == c)
+			s++;
+		while (*s && *s != c)
+			s++;
+		i++;
 	}
 }
