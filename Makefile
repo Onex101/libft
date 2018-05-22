@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/05/22 13:45:05 by xrhoda            #+#    #+#              #
+#    Updated: 2018/05/22 13:45:08 by xrhoda           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		= libft.a
 CFLAGS		= -Wall -Werror -Wextra -I. -c
 FILES		=	ft_memset.c \
@@ -35,7 +47,6 @@ FILES		=	ft_memset.c \
 				ft_strclr.c \
 				ft_putchar.c \
 				ft_putstr.c \
-				ft_putchar_fd.c \
 				ft_striter.c \
 				ft_striteri.c \
 				ft_strmap.c \
@@ -52,6 +63,7 @@ FILES		=	ft_memset.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
+				ft_strsplit.c \
 
 				
 
