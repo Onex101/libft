@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <stdio.h>
 
 void		ft_bzero(void *str, int n);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);

@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strsub_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 13:14:21 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/22 13:14:23 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/22 10:28:24 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/22 10:28:30 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putendl(char const *s)
+
+int    main()
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	ft_putstr("Test for ft_strsub\n");
+    const char *p = "Im a string";
+
+    printf("The string should return 'string': %s\n", ft_strsub(p, 5, 6));
+
+    ft_putchar('\n');
+    return(1);
 }
