@@ -6,7 +6,7 @@
 #    By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/22 13:45:05 by xrhoda            #+#    #+#              #
-#    Updated: 2018/05/22 13:45:08 by xrhoda           ###   ########.fr        #
+#    Updated: 2018/05/23 15:53:53 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,9 +63,7 @@ FILES		=	ft_memset.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				ft_strsplit.c \
-
-				
+				ft_strsplit.c \				
 
 OBJ			= $(FILES:%.c=%.o)
 

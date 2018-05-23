@@ -11,36 +11,61 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static	int		ft_strcount(char const *s, char c)
 {
 	int i;
 	int count;
-	ft_putstr("Enter ft_strcount\n");
 	i = 0;
 	count = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == '\0'))
 		{
 			count++;
 		}
 		i++;
 	}
-	ft_putstr("Exit ft_strcount\n");
 	return (count);
 }
 
 static	char	*ft_pull(char const *s, char c)
 {
 	int len;
-	ft_putstr("Enter ft_pull\n");
 
 	len = 0;
-	while (s[len] != c)
+	while (s[len] != c && s[len] != '\0')
+	{
 		len++;
-	ft_putstr("Exit ft_pull\n");
+	}
 	return (ft_strsub(s, 0, len));	
+}
+
+static	char	*ft_strctrim(char const *s, char c)
+{
+	int		i;
+	int		l;
+	char	*sc;
+
+	i = 0;
+	l = ft_strlen(s) - 1;
+	sc = ft_strdup(s);
+	if (sc == NULL)
+		return (NULL);
+	if (*sc != c)
+	{
+		if (*(sc + l) != c)
+			return (sc);
+	}
+	while (sc[l] == c)
+		l--;
+	sc[++l] = '\0';
+	while (sc[i] == c)
+	{
+		i++;
+	}
+	return (sc + i);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -48,24 +73,24 @@ char			**ft_strsplit(char const *s, char c)
 	char	**str_arr;
 	int		num_words;
 	int		i;
-	ft_putstr("Enter ft_strsplit\n");
+
 	i = 0;
 	num_words = ft_strcount(s, c);
-	str_arr = (char **)malloc(sizeof(*s) * num_words);
+	str_arr = (char **)malloc(sizeof(char *) * num_words);
 	if (!str_arr)
 		return (NULL);
 	while (i < num_words)
 	{
-		ft_putstr("Enter ft_strsplit while loop\n");
-		ft_strtrim(s);
+		s = ft_strctrim(s, c);
 		str_arr[i] = ft_pull(s, c);
-		if (!str_arr[i])
+		if (!(str_arr[i]))
+			//printf("Hello");
 			return (NULL);
-		while (*s && *s != c)
+		while (*s && *s != c && *s != '\0')
+		{
 			s++;
+		}
 		i++;
-		ft_putstr("Exit ft_strsplit while loop\n");
 	}
-	ft_putstr("Exit ft_strsplit");
 	return (str_arr);
 }

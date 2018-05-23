@@ -6,7 +6,7 @@
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 08:25:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/17 08:25:39 by xrhoda           ###   ########.fr       */
+/*   Updated: 2018/05/23 15:54:46 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,13 @@ void		ft_putstr_fd(char const *s, int fd);
 void		ft_putendl_fd(char const *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
+typedef	struct 			s_list
+{
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}			   			t_list;
+
+t_list		*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 #endif

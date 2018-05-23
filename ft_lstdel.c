@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:13:44 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/15 08:13:46 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/23 15:08:20 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/23 15:08:24 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	t_list *temp_node
+
+	temp_node = *alist;
+
+	while (temp_node)
+		temp_node = temp_node->next;
 }
