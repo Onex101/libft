@@ -16,8 +16,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	int		i;
+	int		str_len;
 
+	str_len = ft_strlen(s);
 	sub = ft_strnew(len);
+	if (!sub)
+		return (NULL);
 	i = 0;
 	if (!(s[len]) && !(s[start]) && sub == NULL)
 	{
@@ -28,5 +32,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		sub[i] = s[i + start];
 		i++;
 	}
+	sub[len + 1] = '\0';
 	return (sub);
 }

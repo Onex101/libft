@@ -16,24 +16,19 @@ char	*ft_strtrim(char const *s)
 {
 	int		i;
 	int		l;
-	char	*sc;
 
 	i = 0;
 	l = ft_strlen(s) - 1;
-	sc = ft_strdup(s);
-	if (sc == NULL)
-		return (NULL);
-	if (*sc != 32 && *sc != '\n' && *sc != '\t')
+	if (*s != 32 && *s != '\n' && *s != '\t')
 	{
-		if (*(sc + l) != 32 && *(sc + l) != '\n' && *(sc + l) != '\t')
-			return (sc);
+		if (*(s + l) != 32 && *(s + l) != '\n' && *(s + l) != '\t')
+			return ((char *)s);
 	}
-	while (sc[l] == 32 || sc[l] == '\n' || sc[l] == '\t')
+	while (s[l] == 32 || s[l] == '\n' || s[l] == '\t')
 		l--;
-	sc[++l] = '\0';
-	while (sc[i] == ' ' || sc[i] == '\n' || sc[i]== '\t')
+	while (s[i] == ' ' || s[i] == '\n' || s[i]== '\t')
 	{
 		i++;
 	}
-	return (sc + i);
+	return (ft_strsub(s, i, l));
 }
