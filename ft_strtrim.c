@@ -19,16 +19,38 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	l = ft_strlen(s) - 1;
-	if (*s != 32 && *s != '\n' && *s != '\t')
+	if (*s != ' ' && *s != '\n' && *s != '\t')
 	{
-		if (*(s + l) != 32 && *(s + l) != '\n' && *(s + l) != '\t')
-			return ((char *)s);
+		if (*(s + l) != ' ' && *(s + l) != '\n' && *(s + l) != '\t')
+			return (ft_strdup(s));
 	}
-	while (s[l] == 32 || s[l] == '\n' || s[l] == '\t')
-		l--;
 	while (s[i] == ' ' || s[i] == '\n' || s[i]== '\t')
-	{
-		i++;
-	}
-	return (ft_strsub(s, i, l));
+		{
+			i++;
+			if(!s[i])
+				return (ft_strnew(l));
+		}
+	while (s[l] == ' ' || s[l] == '\n' || s[l] == '\t')
+		l--;
+
+	return (ft_strsub(s, i, (l - i + 1)));
 }
+
+int main(void)
+{
+	char *s1 = "   \t  \n\n \t\t  \n\n\n";
+	char *s2 = "";
+	char *ret = ft_strtrim(s1);
+
+	if (!ft_strcmp(ret, s2))
+	{
+		ft_putstr("Correct\n");
+	}
+	else
+	{
+		ft_putstr(ret);
+		ft_putstr("Wrong\n");
+	}
+	return(0);
+}
+

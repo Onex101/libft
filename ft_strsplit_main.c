@@ -18,12 +18,12 @@ int main(void)
 	ft_putstr("Test for ft_strsplit\n");
 	
 	int i;
-	char *str = "*Hi*this*is***  but i dont think that this would work    a***pretty*cool****string******";
+	char *str = "      split       this for   me  !       ";
 	char **arr;
 
 	i = 0;
-	arr = ft_strsplit(str, '*');
-	while (i < 7)
+	arr = ft_strsplit(str, ' ');
+	while (i < 5)
 	{
 		ft_putstr(arr[i]);
 		i++;

@@ -73,6 +73,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**str_arr;
 	int		num_words;
 	int		i;
+	char	*pnt;
 
 	i = 0;
 	num_words = ft_strcount(s, c);
@@ -82,14 +83,15 @@ char			**ft_strsplit(char const *s, char c)
 	while (i < num_words)
 	{
 		s = ft_strctrim(s, c);
-		str_arr[i] = ft_pull(s, c);
+		pnt = malloc(ft_strlen(ft_pull(s, c)));
+		pnt = ft_pull(s, c);
+		str_arr[i] = ft_strnew(ft_strlen(pnt));
+		ft_strcpy(str_arr[i], pnt);
+		free(pnt);
 		if (!(str_arr[i]))
-			//printf("Hello");
 			return (NULL);
 		while (*s && *s != c && *s != '\0')
-		{
 			s++;
-		}
 		i++;
 	}
 	return (str_arr);
