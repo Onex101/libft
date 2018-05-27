@@ -12,40 +12,20 @@
 
 #include "libft.h"
 
-static int		ft_intlen(int n)
-{
-	int		i;
-
-	i = 0;
-	if (n == 0)
-	{
-		return (1);
-	}
-	while (n)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
 void	ft_putnbr(int n)
 {
-	char str[20];
-	int i;
-	int len;
-
-	len = ft_intlen(n);
-	i = 0;
-	if (n < 0)
-		str[-i] = '-';
-	if (n == 0)
-		ft_putstr("0\0");
-	str[len + 1] = '\0';
-	while (n)
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	else if (n < 0)
 	{
-		str[--len] = n % 10 + 48;
-		n = n / 10;
+		ft_putchar('-');
+		ft_putnbr(n * -1);
 	}
-	ft_putstr(str);
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }
