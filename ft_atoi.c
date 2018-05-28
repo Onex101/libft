@@ -13,61 +13,44 @@
 #include "libft.h"
 #include <stdio.h>
 
-static	long	int	ft_getnum(const char *str)
+static	long	int	ft_getnum(const char *str, int sign)
 {
 	long int num;
-	int sign;
 
 	num = 0;
-	sign = 1;
-	
-	while (*str == ' ' || *str == '\t' || *str == '\f' ||*str == '\v' || *str == '\r')
-			str++;
 	while (*str)
 	{
-		if (*(str) == '-')
-		{
-			sign = -1;
-			str++;
-		}
 		if (ft_isdigit(*str))
 			num = (num * 10) + (*(str) - 48);
 		if (!ft_isdigit(*str))
-			break;
+			break ;
 		str++;
+		if (!ft_isdigit(*str))
+			break ;
 	}
 	return (num * sign);
 }
 
-int		ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	long int num;
-	long int max;
-	long int min;
+	int num;
+	int	count;
+	int sign;
 
-	max = 9223372036854775807;
-	min = -9223372036854775807 - 1;
-	num = ft_getnum(str);
-	if (num > max)
-		return (-1);
-	if (num < min)
-		return (0);
+	sign = 1;
+	count = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n' ||
+		*str == '\f' || *str == '\v' || *str == '\r')
+		str++;
+	while (*str == '+' || *str == '-')
+	{
+		if (*(str) == '-')
+			sign = -1;
+		str++;
+		count++;
+		if (count > 1)
+			return (0);
+	}
+	num = ft_getnum(str, sign);
 	return ((int)num);
 }
-
-/*int main(void)
-{
-	char *n = "9999999999999999990";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-
-	if (i1 == i2)
-		ft_putstr("Worked");
-	else
-		ft_putstr("Nope");
-	ft_putchar('\n');
-	printf("Theirs = %d\n", i1);
-	ft_putchar('\n');
-	printf("Mine = %d", i2);
-	return (0);
-}*/

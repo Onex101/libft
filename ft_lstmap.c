@@ -10,22 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *new_list;
 	t_list *tmp_node;
+	t_list *r_list;
 
-	new_list = f(ft_lstnew(lst->content, lst->size));
-	if (!new_list)
+	if (!lst)
 		return (NULL);
-	tmp_node = new_list;
+	r_list = f(lst->content);
+	if (!r_list)
+		return (NULL);
+	tmp_node = r_list;
 	lst = lst->next;
-	while (lst->next)
+	while (lst)
 	{
-		tmp_node = f(ft_lstnew(lst->content, lst->size));
-		if (!tmp_node)
+		tmp_node->next = f(lst->content);
+		if (!(tmp_node->next))
 			return (NULL);
-		lst = lst-next;
+		tmp_node = tmp_node->next;
+		lst = lst->next;
 	}
-	return (new_list);
+	return (r_list);
 }

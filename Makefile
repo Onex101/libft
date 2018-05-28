@@ -13,7 +13,7 @@
 NAME		= libft.a
 CFLAGS		= -Wall -Werror -Wextra -I. -c
 FILES		=	ft_memset.c \
-				ft_bzero.c \
+				ft_bzero.c	\
 				ft_memcpy.c \
 				ft_memccpy.c \
 				ft_memmove.c \
@@ -64,8 +64,8 @@ FILES		=	ft_memset.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 				ft_strsplit.c \
-				ft_	lstnew.c \
-				ft_lsdtdone.c \
+				ft_lstnew.c \
+				ft_lstdelone.c \
 				ft_lstdel.c \
 				ft_lstadd.c \
 				ft_lstiter.c \

@@ -17,6 +17,7 @@ static	int		ft_strcount(char const *s, char c)
 {
 	int i;
 	int count;
+
 	i = 0;
 	count = 0;
 	while (s[i] != '\0')
@@ -39,7 +40,7 @@ static	char	*ft_pull(char const *s, char c)
 	{
 		len++;
 	}
-	return (ft_strsub(s, 0, len));	
+	return (ft_strsub(s, 0, len));
 }
 
 static	char	*ft_strctrim(char const *s, char c)
@@ -94,5 +95,6 @@ char			**ft_strsplit(char const *s, char c)
 			s++;
 		i++;
 	}
+	str_arr[i] = NULL;
 	return (str_arr);
 }
