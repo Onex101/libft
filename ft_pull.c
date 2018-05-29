@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_pull.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 07:02:18 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/21 07:02:20 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/29 12:49:46 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/29 12:50:13 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_pull(char const *s, char c)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	int len;
+
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
+	{
+		len++;
+	}
+	return (ft_strsub(s, 0, len));
 }

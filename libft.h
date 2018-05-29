@@ -72,6 +72,14 @@ void		ft_putstr_fd(char const *s, int fd);
 void		ft_putendl_fd(char const *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
+char		*ft_strctrim(char const *s, char c);
+int			ft_strcount(char const *s, char c);
+char		*ft_zero(void);
+int			ft_intlen(int n);
+char		**ft_poparr(char **s_arr, int n, char const *s, char c);
+char		*ft_pull(char const *s, char c);
+
+
 typedef struct	s_list
 {
 	void			*content;

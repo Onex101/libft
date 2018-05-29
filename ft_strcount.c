@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 07:02:18 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/21 07:02:20 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/29 12:29:57 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/29 12:30:30 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+int		ft_strcount(char const *s, char c)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (s[i] != '\0')
+	{
+		if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == '\0'))
+		{
+			count++;
+		}
+		i++;
+	}
+	return (count);
 }

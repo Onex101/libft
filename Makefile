@@ -6,7 +6,7 @@
 #    By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/22 13:45:05 by xrhoda            #+#    #+#              #
-#    Updated: 2018/05/23 15:53:53 by xrhoda           ###   ########.fr        #
+#    Updated: 2018/05/29 07:41:10 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,12 @@ FILES		=	ft_memset.c \
 				ft_lstadd.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
+				ft_strctrim.c \
+				ft_strcount.c \
+				ft_zero.c \
+				ft_intlen.c \
+				ft_poparr.c \
+				ft_pull.c \
 
 OBJ			= $(FILES:%.c=%.o)
 
@@ -81,6 +87,10 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(FILES)
 	gcc $(CFLAGS) $(FILES)
+
+so: $(NAME)
+	gcc $(CFLAGS) -fpic $(FILES)
+	gcc -shared -o libft.so $(OBJ)
 
 clean:
 	rm -f $(OBJ)

@@ -18,12 +18,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int		i;
 	int		len;
 
-	s_copy = s;
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	if (s && f)
 	{
-		f(i, (s_copy + i));
-		i++;
+		s_copy = s;
+		i = 0;
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			f(i, (s_copy + i));
+			i++;
+		}
 	}
 }

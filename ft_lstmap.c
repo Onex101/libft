@@ -19,16 +19,14 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (!lst)
 		return (NULL);
-	r_list = f(lst->content);
+	r_list = f(lst);
 	if (!r_list)
 		return (NULL);
 	tmp_node = r_list;
 	lst = lst->next;
 	while (lst)
 	{
-		tmp_node->next = f(lst->content);
-		if (!(tmp_node->next))
-			return (NULL);
+		tmp_node->next = f(lst);
 		tmp_node = tmp_node->next;
 		lst = lst->next;
 	}

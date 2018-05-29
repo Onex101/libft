@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_poparr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 07:02:18 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/21 07:02:20 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/29 12:45:55 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/29 12:46:50 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	**ft_poparr(char **s_arr, int n, char const *s, char c)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	char	*pnt;
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		s = ft_strctrim(s, c);
+		pnt = malloc(ft_strlen(ft_pull(s, c)));
+		pnt = ft_pull(s, c);
+		s_arr[i] = ft_strnew(ft_strlen(pnt));
+		ft_strcpy(s_arr[i], pnt);
+		free(pnt);
+		if (!(s_arr[i]))
+			return (NULL);
+		while (*s && *s != c && *s != '\0')
+			s++;
+		i++;
+	}
+	s_arr[i] = NULL;
+	return (s_arr);
 }

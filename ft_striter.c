@@ -18,12 +18,15 @@ void	ft_striter(char *s, void (*f)(char *))
 	int		i;
 	int		len;
 
-	s_copy = s;
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	if (s && f)
 	{
-		f(s_copy + i);
-		i++;
+		s_copy = s;
+		i = 0;
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			f(s_copy + i);
+			i++;
+		}
 	}
 }

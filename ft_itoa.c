@@ -12,35 +12,6 @@
 
 #include "libft.h"
 
-static int		ft_intlen(int n)
-{
-	int		i;
-
-	i = 0;
-	if (n == 0)
-	{
-		return (1);
-	}
-	while (n)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
-static	char	*ft_zero(void)
-{
-	char *str;
-
-	str = ft_memalloc(2);
-	if (!str)
-		return (NULL);
-	*str = '0';
-	str[1] = '\0';
-	return (str);
-}
-
 char			*ft_itoa(int n)
 {
 	char		*str;

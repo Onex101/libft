@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_zero.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 07:02:18 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/21 07:02:20 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/05/29 12:41:00 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/05/29 12:41:23 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_zero(void)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	char *str;
+
+	str = ft_memalloc(2);
+	if (!str)
+		return (NULL);
+	*str = '0';
+	str[1] = '\0';
+	return (str);
 }
