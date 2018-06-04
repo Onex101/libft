@@ -76,6 +76,7 @@ FILES		=	ft_memset.c \
 				ft_intlen.c \
 				ft_poparr.c \
 				ft_pull.c \
+				ft_strclen.c \
 
 OBJ			= $(FILES:%.c=%.o)
 

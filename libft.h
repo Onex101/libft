@@ -78,6 +78,7 @@ char		*ft_zero(void);
 int			ft_intlen(int n);
 char		**ft_poparr(char **s_arr, int n, char const *s, char c);
 char		*ft_pull(char const *s, char c);
+int			ft_strclen(char *s, char c);
 
 
 typedef struct	s_list
