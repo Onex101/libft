@@ -6,7 +6,7 @@
 #    By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/22 13:45:05 by xrhoda            #+#    #+#              #
-#    Updated: 2018/05/29 07:41:10 by xrhoda           ###   ########.fr        #
+#    Updated: 2018/06/07 07:39:30 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ FILES		=	ft_memset.c \
 				ft_poparr.c \
 				ft_pull.c \
 				ft_strclen.c \
+				ft_strcdup.c \
 
 OBJ			= $(FILES:%.c=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 08:25:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/23 15:54:46 by xrhoda           ###   ########.fr       */
+/*   Updated: 2018/06/07 07:39:03 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int			ft_intlen(int n);
 char		**ft_poparr(char **s_arr, int n, char const *s, char c);
 char		*ft_pull(char const *s, char c);
 int			ft_strclen(char *s, char c);
-
+char		*ft_strcdup(const char *str, char c);
 
 typedef struct	s_list
 {
