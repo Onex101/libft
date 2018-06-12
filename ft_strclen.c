@@ -19,7 +19,7 @@ int ft_strclen(char *str, char c)
 	if (!str)
 		return (-1);
 	count = 0;
-	while (str)
+	while (*str != '\0')
 	{
 		if (*str == c)
 			return (count);
