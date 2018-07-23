@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_poparr.c                                        :+:      :+:    :+:   */
+/*   ft_chrcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/29 12:45:55 by xrhoda            #+#    #+#             */
-/*   Updated: 2018/05/29 12:46:50 by xrhoda           ###   ########.fr       */
+/*   Created: 2018/07/02 07:18:35 by xrhoda            #+#    #+#             */
+/*   Updated: 2018/07/02 07:38:37 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_poparr(char **r, char const *s, char c, int size)
+int	ft_chrcount(char *str, char c)
 {
-	int		a;
-	int		i;
+	int count;
 
-	if (!r)
-		return (NULL);
-	a = 0;
-	while (*s != '\0' && a < size)
+	if (!str || !c)
+		return (-1);
+	count = 0;
+	while (*str != '\0')
 	{
-		if (*s != c)
-		{
-			i = 0;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-			r[a++] = ft_strsub(s, 0, i);
-			s = s + i;
-		}
-		s++;
+		if (*str == c)
+			count++;
+		str++;
 	}
-	r[a] = NULL;
-	return (r);
+	return (count);
 }

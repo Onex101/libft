@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_strclen(char *str, char c)
+int	ft_strclen(char *str, char c)
 {
 	int count;
 

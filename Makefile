@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= libft.a
-CFLAGS		= -Wall -Werror -Wextra -I. -c
+CFLAGS		= -Wall -Werror -Wextra -I./includes -c
 FILES		=	ft_memset.c \
 				ft_bzero.c	\
 				ft_memcpy.c \
@@ -78,6 +78,8 @@ FILES		=	ft_memset.c \
 				ft_pull.c \
 				ft_strclen.c \
 				ft_strcdup.c \
+				ft_chrcount.c \
+				get_next_line.c \
 
 OBJ			= $(FILES:%.c=%.o)
 
